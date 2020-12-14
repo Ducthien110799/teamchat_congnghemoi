@@ -1,8 +1,14 @@
 export const transValidation = {
+  email_incorrect: "Email phải có dạng example@gmail.com!",
+  gender_incorrect: "Ủa, tại sao trường giới tính lại bị sai?",
+  password_incorrect: "Mật khẩu phải chứa ít nhất 6 ký tự",
+  password_confirmation_incorrect: "Nhập lại mật khẩu chưa chính xác.",
+
   email_incorrect: "Email phải có dạng abcxyz@gmail.com!",
   gender_incorrect: "Ủa, tại sao trường giới tính lại bị sai?",
   password_incorrect: "Mật khẩu phải chứa ít nhất 6 ký tự.",
   password_confirmation_incorrect: "Mật khẩu không trùng khớp.",
+
   update_username: "Username giới hạn trong khoảng 3-17 kí tự và không được phép chứa kí tự đặc biệt.",
   update_gender: "Lỗi! Dữ liệu giới tính có vấn đề, bạn là hacker chăng?",
   update_address: "Địa chỉ giới hạn trong khoảng 3-30 kí tự.",
@@ -32,12 +38,17 @@ export const transErrors = {
 
 export const transSuccess = {
   userCreated: (userEmail) => {
+
+    return `Mã xác nhận đã được gửi tới <strong>${userEmail}</strong>`;
+  },
+  account_actived: "Kích hoạt tài khoản thành công, bạn đã có thể đăng nhập.",
+
     return `Mã xác nhận đã gửi vào <strong>${userEmail}</strong>, vui lòng vào email của bạn để kích hoạt tài khoản `;
   },
   account_actived: "Kích hoạt tài khoản thành công, đăng nhập ngay.",
   loginSuccess: (username) => {
     return null;
-  },
+  }
   logout_success: "Bạn đã đăng xuất!",
   user_info_updated: "Cập nhật thông tin người dùng thành công.",
   user_password_updated: "Cập nhật mật khẩu thành công."
@@ -48,9 +59,11 @@ export const transMail = {
   template: (linkVerify) => {
     return `
       <h2>Bạn nhận được email này vì đã đăng ký tài khoản trên ứng dụng TEAM Chat.</h2>
+      <h2>Bạn nhận được email này vì đã đăng ký tài khoản trên Website TEAM chat.</h2>
+      <h2>Bạn nhận được email này vì đã đăng ký tài khoản trên ứng dụng TEAM Chat.</h2>
       <h3>Vui lòng click vào liên kết bên dưới để xác nhận kích hoạt tài khoản.</h3>
       <h3><a href="${linkVerify}" target="blank">${linkVerify}</a></h3>
-      <h4>Nếu tin rằng email này là nhầm lẫn, hãy bỏ qua nó. Trân trọng.</h4>
+      <h4>Xin chân thành cảm ơn</h4>
     `;
   },
   send_failed: "Có lỗi trong quá trình gửi email, vui lòng liên hệ lại với bộ phận hỗ trợ của chúng tôi."
