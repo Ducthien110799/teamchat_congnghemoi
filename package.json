@@ -1,5 +1,5 @@
 {
-  "name": "alo_chat",
+  "name": "teanchat",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "babel-node src/server.js"
   },
-  "author": "ThanhChinh",
+  "author": "teamchat",
   "license": "ISC",
   "homepage": "",
   "dependencies": {
