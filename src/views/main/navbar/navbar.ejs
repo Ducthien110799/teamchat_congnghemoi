@@ -38,36 +38,7 @@
                         <% } %>
                     </a>
                 </li>
-                <li>
-                    <a href="javascript:void(0)" id="noti_Button" data-toggle="modal" title="Thông báo">
-                        <i class="fa fa-bell-o"></i>
-                        <% if(countNotifUnread > 0) { %>
-                            <div class="noti_counter">
-                                <%= countNotifUnread %>
-                            </div>
-                        <% } else { %>
-                            <div class="noti_counter display-none"></div>
-                        <% } %>
-                        
-                        <div id="noti_Container">
-                            <div id="notifications">
-                                <a href="javascript:void(0)" id="popup-mark-notif-as-read">
-                                    Đánh dấu tất cả là đã đọc
-                                </a>
-                                <div class="noti_content">
-                                   <% notifications.forEach(function(notification) { %>
-                                        <%- notification %>
-                                   <% }); %>
-                                </div>
-                                <div class="seeAll">
-                                    <a href="#notificationsModal" data-toggle="modal">
-                                        Xem tất cả
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </li>
+
                 <li class="dropdown" id="dropdown-navbar-user" data-uid="<%= user._id %>">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                         <img id="navbar-avatar" class="avatar-small" src="images/users/<%= user.avatar %>" alt="">
@@ -78,7 +49,7 @@
                         <li>
                             <a href="#user-profile-modal" data-toggle="modal">
                                 <i class="fa fa-cog"></i>
-                                &nbsp;Cài đặt tài khoản
+                                &nbsp;Tài khoản cá nhân
                             </a>
                         </li>
                         <li>
