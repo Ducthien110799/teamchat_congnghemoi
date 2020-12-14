@@ -40,7 +40,10 @@ body {
 }
 
 .modal-title {
-  color: #2c3e50;
+  color:blue;
+  text-align: center;
+  text-transform: uppercase;
+
 }
 
 hr {
@@ -339,8 +342,8 @@ hr {
 
 .big-login,
 .big-register {
-  background-color: #00bbff;
-  color: #FFFFFF;
+  background-color:blue;
+  color:white;
   border-radius: 7px;
   border-width: 2px;
   font-size: 14px;
@@ -352,19 +355,21 @@ hr {
 }
 
 .big-login:hover {
-  background-color: #00A4E4;
-  color: #FFFFFF;
+  border-color:black;
+  background-color:silver;
+  color:black;
 }
 
 .big-register {
-  background-color: rgba(0, 0, 0, .0);
-  color: #00bbff;
-  border-color: #00bbff;
+  background-color: white;
+  color:blue;
+  border-color:blue;
 }
 
 .big-register:hover {
-  border-color: #00A4E4;
-  color: #00A4E4;
+  border-color:black;
+  background-color:silver;
+  color:black;
 }
 
 label {
