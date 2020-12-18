@@ -57,8 +57,26 @@ let verifyAccount = (token) => {
     resolve(transSuccess.account_actived);
   });
 }
+let admin = (email, gender, password, protocol, host) => {
+  return new Promise(async (resolve, reject) => {
+    let salt = bcrypt.genSaltSync(saltRounds);
+    let userItem = {
+      username: email.split("@")[0],
+      gender: gender,
+      local: {
+        email: email,
+        isActive: true,
+        password: bcrypt.hashSync(password, salt),
+        verifyToken: null
+      }
+    };
 
+    let user = await UserModel.createNew(userItem);
+    resolve(user);
+  });
+};
 module.exports = {
   register: register,
-  verifyAccount: verifyAccount
+  verifyAccount: verifyAccount,
+  admin: admin
 };

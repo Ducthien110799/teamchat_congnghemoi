@@ -1,5 +1,5 @@
 /**
- * Created by https://trungquandev.com's author on 25/02/2018.
+ * Created by https://quoccuong.com's author on 25/02/2018.
  */
 function showRegisterForm() {
     $('.loginBox').fadeOut('fast', function() {
@@ -12,7 +12,29 @@ function showRegisterForm() {
     $('.error').removeClass('alert alert-danger').html('');
   
   }
+  function showadminForm() {
+    $('.loginBox').fadeOut('fast', function() {
+      $('.registerBox').fadeIn('fast');
+      $('.login-footer').fadeOut('fast', function() {
+        $('.register-footer').fadeIn('fast');
+      });
+      $('.modal-title').html('Đăng ký tài khoản');
+    });
+    $('.error').removeClass('alert alert-danger').html('');
   
+  }
+  
+  function showadduserForm() {
+    $('#addusermodle .registerBox').fadeOut('fast', function() {
+      $('.loginBox').fadeIn('fast');
+      $('.register-footer').fadeOut('fast', function() {
+        $('.login-footer').fadeIn('fast');
+      });
+  
+      $('.modal-title').html('Đăng nhập');
+    });
+    $('.error').removeClass('alert alert-danger').html('');
+  }
   function showLoginForm() {
     $('#loginModal .registerBox').fadeOut('fast', function() {
       $('.loginBox').fadeIn('fast');
@@ -24,17 +46,28 @@ function showRegisterForm() {
     });
     $('.error').removeClass('alert alert-danger').html('');
   }
-  
   function openLoginModal() {
     setTimeout(function() {
       $('#loginModal').modal('show');
       showLoginForm();
     }, 230);
   }
-  
+  function showAddForm() {
+    $('#AddModal').fadeOut('fast', function() {
+      $('.addBox').fadeIn('fast');
+      $('.modal-title').html('Thêm User');
+    });
+    $('.error').removeClass('alert alert-danger').html('');
+  }
   function openRegisterModal() {
     setTimeout(function() {
       $('#loginModal').modal('show');
       showRegisterForm();
+    }, 230);
+  }
+  function openAdduserModal() {
+    setTimeout(function() {
+      $('#AddModal').modal('show');
+      showAddForm();
     }, 230);
   }

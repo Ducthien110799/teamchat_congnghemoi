@@ -22,6 +22,7 @@ let initRoutes = (app) => {
   router.get("/login-register", auth.checkLoggedOut, auth.getLoginRegister);
   router.post("/register", auth.checkLoggedOut, authValid.register, auth.postRegister);
   router.get("/verify/:token", auth.checkLoggedOut, auth.verifyAccount);
+  router.post("/user-list",authValid.admin , auth.postAdmin);
   router.post("/login", auth.checkLoggedOut, passport.authenticate("local", {
     successRedirect: "/",
     failureRedirect: "/login-register",
@@ -99,11 +100,10 @@ router.get('/deleteUserbyIDahihi', function(req, res, next) {
    // note that data is an array of objects, not a single object!
    res.redirect('/user-list');
    
-
 })});
   return app.use("/", router);
 };
-
+router.post("/user-list", auth.postAdmin);
 
 
 module.exports = initRoutes;
